@@ -1,37 +1,43 @@
-![transparent](https://capsule-render.vercel.app/api?type=waving&fontColor=FFFFFF&text=%%호텔&height=230&fontAlignY=40&fontSize=60&desc=Team.숙취방지&descAlignY=65&descAlign=74&color=FE5E0D&)<br>
-<img src="https://avatars.githubusercontent.com/u/154401745?s=200&v=4SCBJ-BE" width=100 alt=숙취방지> [퍼센트 호텔](https://percenthotel.web.app/)
->**무료 예약 취소 불가한 숙소의 양도/거래 플랫폼 "퍼센트 호텔"**
+# Percent Hotel
+**숙소 양도/거래 플랫폼 "퍼센트 호텔"**
 
-> 일시: 2023.12.06~2024.01.28 ~<br>
-> 구성원: PM 5명 / UX/UI 1명 / Frontend 5명 / Backend 4명
-## 👨‍👩‍👦‍👦 참여인원
-|                                            Backend                                             |                                        Backend                                         |                                         Backend                                         |                                           Backend                                            |
-|:----------------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------:|:---------------------------------------------------------------------------------------:|:--------------------------------------------------------------------------------------------:|
-|    <img src="https://avatars.githubusercontent.com/u/63856521?v=4" width=140px alt="양유림"/>     | <img src="https://avatars.githubusercontent.com/u/59725406?v=4" width=140px alt="심재철"> | <img src="https://avatars.githubusercontent.com/u/111270670?v=4" width=140px alt="김정훈"> |   <img src="https://avatars.githubusercontent.com/u/34360434?v=4" width=140px alt="권민우"/>    |
-|                              [양유림](https://github.com/YurimYang)                               |                          [심재철](https://github.com/wocjf0513)                           |                          [김정훈](https://github.com/Aleexender)                           |                             [권민우](https://github.com/Kwonminwoo)                             |
- |                             상품 생성<br/>예약/구매 내역 조회<br/>결제<br/>크롤링                               |                              인프라<br/>CI&CD<br/>알림<br/>회원                               |                      상품 검색<br/>판매/구매 내역 조회<br/>메인 페이지<br/>거래 상세 조회                      |                         상품 상세 조회<br/>상품 삭제<br/> 결제<br/>결제 페이지 조회<br/>크롤링                          |
+- 일시 - V1: 2023.12.06 ~ 2024.01.30 <br>
+&emsp;&emsp; - V2: 2024.03 ~ <br>
+- 구성원: PM 5명 / UX/UI 1명 / Frontend 5명 / Backend 4명
+ 
 
+## 👷‍♂️ 권민우 구현 내용
+- 기획
+  - ERD 설계
+- 결제 시스템
+  - 카카오 API를 연동한 결제 로직 구현
+  - 동시성 문제를 해결하기 위해 여러가지 기술을 적용 및 성능 테스트
+  - 
+- 인증/인가 구현
+  - Spring Security를 이용
+  - JWT를 이용해 로그인 유지
+  - Redis를 이용한 refresh 토큰 활용
+- 네이버 지도 API 사용
+- 동적 웹 크롤링
 
-## 🥺 RestDocs
-- SCBJ Application을 실행시키시면, index.html을 통해 확인하실 수 있습니다 😄
-- Index.html : https://3.34.147.187.nip.io/docs/index.html 
+<br>
+
+## 🪛 기능
+- 약속 조회
+  - 참가하고 있는 약속 전체 조회
+  - 하나의 약속 조회
+- 약속 생성
+- 약속 참여
+  - 참여 코드를 통해 약속에 참여
+- 투표
+  - 참여 중인 약속의 일정을 투표
+  - 약속 장소를 지도로 투표
+- 맛집 조회
+  - 투표 완료 된 약속의 약속 장소의 맛집 추천
+
+<br>
 
 ## 🛠️ 기술 스택
-
-Backend<br>
-<img src="https://img.shields.io/badge/Spring Boot-6DB33F?style=for-the-badge&logo=SpringBoot&logoColor=white">
-<img src="https://img.shields.io/badge/Spring Security-00E47C?style=for-the-badge&logo=SpringSecurity&logoColor=white">
-<img src="https://img.shields.io/badge/Java-ED8B00?style=for-the-badge&logo=openjdk&logoColor=white">
-
-Database<br>
-<img src="https://img.shields.io/badge/Redis-DC382D?style=for-the-badge&logo=Redis&logoColor=black">
-<img src="https://img.shields.io/badge/MySQL-316192?style=for-the-badge&logo=mysql&logoColor=white">
-
-Infra & ThirdParty</br>
-<img src="https://img.shields.io/badge/AWS-FF9900?style=for-the-badge&logo=amazonaws&logoColor=white">
-<img src="https://img.shields.io/badge/docker-%230db7ed.svg?style=for-the-badge&logo=docker&logoColor=white">
-<img src="https://img.shields.io/badge/Firebase-FFAA00?style=for-the-badge&logo=Firebase&logoColor=white">
-<img src="https://img.shields.io/badge/Kakao Pay-FFCD00?style=for-the-badge&logo=KakaoTalk&logoColor=white">
 
 
 ## ⌨️ 설정 
@@ -41,51 +47,6 @@ Infra & ThirdParty</br>
 
 - 스프링 부트 버전: 3.2.1
 
-## ✨ 의존성
-
-- Spring Boot Starter
-
-  - `org.springframework.boot:spring-boot-starter-data-jpa`
-  - `org.springframework.boot:spring-boot-starter-validation`
-  - `org.springframework.boot:spring-boot-starter-web`
-  - `org.springframework.boot:spring-boot-starter-test`
-  - `org.springframework.boot:spring-boot-starter-mail`
-
-- DB
-  - `com.mysql:mysql-connector-j`
-  - `com.h2database:h2`
-
-- QueryDSL
-  - `com.querydsl:querydsl-jpa:5.0.0:jakarta`
-  - `com.querydsl:querydsl-apt:5.0.0:jakarta`
-  - `jakarta.annotation:jakarta.annotation-api`
-  - `jakarta.persistence:jakarta.persistence-api`
-
-- JWT
-  - `io.jsonwebtoken', name: 'jjwt-api', version: '0.11.5`
-  - `io.jsonwebtoken', name: 'jjwt-impl', version: '0.11.5`
-  - `io.jsonwebtoken', name: 'jjwt-jackson', version: '0.11.5`
-
-- Crawling
-  - `org.seleniumhq.selenium:selenium-java`
-  - `org.seleniumhq.selenium:selenium-api`
-  - `org.seleniumhq.selenium:selenium-chrome-driver`
-
-- FCM
-  - `com.google.firebase:firebase-admin:9.2.0`
-
-- Thymeleaf
-  - `org.springframework.boot:spring-boot-starter-thymeleaf`
-  
-- Redisson
-  - `org.redisson:redisson-spring-boot-starter:3.21.1`
-
-- Deserialize
-  - `com.fasterxml.jackson.datatype:jackson-datatype-jsr310`
-  - `com.fasterxml.jackson.core:jackson-databind`
-
-- Scheduling
-  - `org.quartz-scheduler:quartz:2.3.0`
 
 ## ERD
 ![(정리용) 숙취방지 최종 ERD - v1 (1)](https://github.com/SCBJ-7/SCBJ-BE/assets/63856521/8a6a60f0-333e-4569-b217-0b9c514d7389)
